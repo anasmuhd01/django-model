@@ -20,5 +20,6 @@ from teacher.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',homeView.as_view())
+    path('',homeView.as_view()),
+    path('list',studentListView.as_view(),name="slist")
 ]

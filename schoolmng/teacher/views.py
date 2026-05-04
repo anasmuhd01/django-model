@@ -6,3 +6,8 @@ from django.views import View
 class homeView(View):
     def get(self,req):
         return render(req,'home.html')
+    
+
+class studentListView(View):
+    def get(self,req):
+        return render(req,"studentlist.html")
