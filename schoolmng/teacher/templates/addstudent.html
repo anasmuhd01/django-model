@@ -16,13 +16,22 @@
 </head>
 
 <body>
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="w-50 border shadow bg-light text-center p-3">
-            <h1 class="">School Management System</h1>
-            <a href="{% url 'slist' %}" class="btn btn-info">View List</a>
-        </div>
+    <h1>Add Student</h1>
+    <div class="p-5">
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" id="" class="form-control mb-3" placeholder="Name">
+            <input type="text" name="age" id="" class="form-control mb-3" placeholder="Age">
+            <input type="text" name="batch" id="" class="form-control mb-3" placeholder="Batch">
+            <input type="text" name="place" id="" class="form-control mb-3" placeholder="Place">
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-success ">Submit</button>
+                <a href="{% url 'slist' %}" class="btn btn-danger">Cancel</a>
+            </div>
+
+
+        </form>
     </div>
-    
 
 </body>
 

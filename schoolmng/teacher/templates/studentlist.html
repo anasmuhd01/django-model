@@ -17,7 +17,41 @@
 </head>
 
 <body>
+    <header class="bg-info text-light p-2 text-center">
+        <h2>Student Management System</h2>
+    </header>
     <h1>Student List</h1>
+    <a href="{% url 'sadd' %}" class="btn btn-success m-5">Add new student +</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Batch</th>
+                <th>Place</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Ajith</td>
+                <td>23</td>
+                <td>MCA</td>
+                <td>Kannur</td>
+                <td>
+                    <a class="btn btn-warning" href="{% url 'sedit' %}">UPDATE</a>
+                    <a class="btn btn-danger" href="">DELETE</a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <footer class="bg-info text-light p-2 text-center fixed-bottom">
+        <h6>Student Management System @2026</h6>
+    </footer>
 </body>
 
 </html>
