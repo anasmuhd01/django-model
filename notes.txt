@@ -16,3 +16,22 @@ fileds =>
 
 py manage.py makemigrations -> create migration files
 py manage.py migrate -> migrate 
+
+ORM methods/Queries =>
+----------------------
+mehtods of models,used for interacting with db tables
+1.create()  
+2.get() -> return the object no iteration needed modelname.objects.get(id=1)
+3.filter() -> return the QuerySet
+4.all()
+5.update()
+6.delete()
+7.count()
+8.limit()
+etc
+
+Django Shell => 
+⇨ cmd based interface used for interacting with models
+⇨ to activate shell : py manage.py shell
+⇨ used for interactive mode of programming with django models
+⇨
