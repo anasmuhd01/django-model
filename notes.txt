@@ -1,0 +1,18 @@
+a powerfull abstraction layer that allows you to interact with your DB using python
+classes and methods instead of writing raw sql
+
+models => 
+    each python class inheriting from django.db.models.Model represents a single database table
+
+    django-> db -> models.py -> class Model 
+    class className(models.Model):
+        fields
+
+fileds =>
+    attributes in your model (like charfield, integerfield) represent table columns
+
+    class className(models.Model):
+        name = models.CharField()
+
+py manage.py makemigrations -> create migration files
+py manage.py migrate -> migrate 
