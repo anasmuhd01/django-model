@@ -52,3 +52,7 @@ filter => model_name.objects.type
     StudentList.objects.filter()
 
 
+used for passing request from one URL to another 
+done usig URL name
+
+redirect(url_name)

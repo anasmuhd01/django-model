@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views import View
 from django.http import HttpResponse
 from teacher.models import *
@@ -25,9 +25,7 @@ class AddStudentView(View):
         place=req.POST.get('place')
 
         StudentList.objects.create(name=name,age=age,batch=batch,place=place)
-        qso=StudentList.objects.all()
-
-        return render(req,"studentlist.html",{'studentlist'})
+        return redirect("slist")
     
 class EditStudentView(View):
     def get(self,req):
