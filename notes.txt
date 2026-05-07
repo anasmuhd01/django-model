@@ -63,3 +63,10 @@ Dynamic Routing/ path parameter
 urls.py=>
     path('path_name/<int:pid>',view.as_view(),name="")
 
+
+DjangoForms =>
+-------------------
+
+form concept by django
+a child class of form class from django-> forms.py
+

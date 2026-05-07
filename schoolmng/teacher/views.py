@@ -37,11 +37,12 @@ class EditStudentView(View):
         return render(req,"editstudent.html",{'data':edit_data})
     
     def post(self,req,*args,**kwargs):
+        
         name=req.POST.get('name')
         age=req.POST.get('age')
         batch=req.POST.get('batch')
         place=req.POST.get('place')
-        stud_obj  = StudentList.objects.get(kwargs.get('sid'))
+        stud_obj  = StudentList.objects.get(id=kwargs.get("sid")   )
         stud_obj.name=name
         stud_obj.age=age
         stud_obj.batch=batch
