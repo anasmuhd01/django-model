@@ -12,7 +12,8 @@ class homeView(View):
 
 class studentListView(View):
     def get(self,req):
-        return render(req,"studentlist.html")
+        qso = StudentList.objects.all()
+        return render(req,"studentlist.html",{'studentlist':qso})
     
 class AddStudentView(View):
     def get(self,req):
@@ -22,8 +23,11 @@ class AddStudentView(View):
         age=req.POST.get('age')
         batch=req.POST.get('batch')
         place=req.POST.get('place')
+
         StudentList.objects.create(name=name,age=age,batch=batch,place=place)
-        return render(req,"studentlist.html")
+        qso=StudentList.objects.all()
+
+        return render(req,"studentlist.html",{'studentlist'})
     
 class EditStudentView(View):
     def get(self,req):
