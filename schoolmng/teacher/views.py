@@ -42,6 +42,11 @@ class EditStudentView(View):
         batch=req.POST.get('batch')
         place=req.POST.get('place')
         stud_obj  = StudentList.objects.get(kwargs.get('sid'))
+        stud_obj.name=name
+        stud_obj.age=age
+        stud_obj.batch=batch
+        stud_obj.place=place
+        stud_obj.save()
         return redirect('slist')
         
 class DeleteStudent(View):
