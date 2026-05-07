@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
+from teacher.models import *
 
 # Create your views here.
 
@@ -21,7 +22,8 @@ class AddStudentView(View):
         age=req.POST.get('age')
         batch=req.POST.get('batch')
         place=req.POST.get('place')
-        return HttpResponse(f"{name} {age} {batch} {place}")
+        StudentList.objects.create(name=name,age=age,batch=batch,place=place)
+        return render(req,"studentlist.html")
     
 class EditStudentView(View):
     def get(self,req):

@@ -35,3 +35,20 @@ Django Shell =>
 ⇨ to activate shell : py manage.py shell
 ⇨ used for interactive mode of programming with django models
 ⇨
+
+◉ QuerySet 
+    ⇨ Field Lookup Reference
+    AND using ,
+    OR using --> from djang.db.models import Q 
+         then StudentList.objects.filter( Q(condition1) | Q(condition2) )
+    
+    NOT using -->  StudentList.objects.filter( ~Q(condition1))
+
+
+get =>  model_name.objects.type
+    StudentList.objects.get()
+
+filter => model_name.objects.type
+    StudentList.objects.filter()
+
+
