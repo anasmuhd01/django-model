@@ -23,5 +23,6 @@ urlpatterns = [
     path('',homeView.as_view()),
     path('list',studentListView.as_view(),name="slist"),
     path('add',AddStudentView.as_view(),name="sadd"),
-    path('edit',EditStudentView.as_view(),name='sedit')
+    path('edit<int:sid>',EditStudentView.as_view(),name='sedit'),
+    path('delete<int:sid>',DeleteStudent.as_view(),name='sdelete')
 ]

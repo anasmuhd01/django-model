@@ -42,8 +42,8 @@
                 <td>{{i.batch}}</td>
                 <td>{{i.place}}</td>
                 <td>
-                    <a class="btn btn-warning" href="{% url 'sedit' %}">UPDATE</a>
-                    <a class="btn btn-danger" href="">DELETE</a>
+                    <a class="btn btn-warning" href="{% url 'sedit' i.id %}">UPDATE</a>
+                    <a class="btn btn-danger" href="{% url 'sdelete' i.id %}">DELETE</a>
                 </td>
 
             </tr>

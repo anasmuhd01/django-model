@@ -28,13 +28,25 @@ class AddStudentView(View):
         return redirect("slist")
     
 class EditStudentView(View):
-    def get(self,req):
-        return render(req,"editstudent.html")
+    def get(self,req,*args,**kwargs):
+        sid=kwargs.get('sid')
+        # edit_data will return the queryset <>
+        edit_data= StudentList.objects.get(id=sid)
+        # for i in edit_data:
+        #     print(i.name)
+        return render(req,"editstudent.html",{'data':edit_data})
     
-    def post(self,req):
-        name=req.POST.get('name')
-        age=req.POST.get('age')
-        batch=req.POST.get('batch')
-        place=req.POST.get('place')
-        return HttpResponse(f"{name} {age} {batch} {place}")
+    def post(self,req,*args,**kwargs):
+        # name=req.POST.get('name')
+        # age=req.POST.get('age')
+        # batch=req.POST.get('batch')
+        # place=req.POST.get('place')
+        # return HttpResponse(f"{name} {age} {batch} {place}")
+        return redirect('slist')
+        
+class DeleteStudent(View):
+    def get(self,req,*args,**kwargs):
+        del_val=kwargs.get('sid')
+        StudentList.objects.get(id=del_val).delete()
+        return redirect("slist")
         
