@@ -20,17 +20,11 @@
     <div class="p-5">
         <form action="" method="post">
             {% csrf_token %}
-            
-            <input type="text" name="name" id="" class="form-control mb-3" value="{{data.name}}">
-            <input type=" text" name="age" id="" class="form-control mb-3" value="{{data.age}}">
-            <input type="text" name="batch" id="" class="form-control mb-3" value="{{data.batch}}">
-            <input type="text" name="place" id="" class="form-control mb-3" value="{{data.place}}">
-            
-            <div class="d-flex justify-content-between">
-                <button class="btn btn-success ">Update</button>
-                <a href="{% url 'slist' %}" class="btn btn-danger">Cancel</a>
-            </div>
+            <table class="table">
+                {{form.as_table}}
 
+            </table>
+            <a href="" class="btn btn-success">Submit</a>
 
         </form>
     </div>

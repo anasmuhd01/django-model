@@ -88,9 +88,18 @@ class AddhomeworkView(View):
             return redirect('viewworks')
         return  HttpResponse('Form validation failed')
     
-# class EdithomeworkView(View):
-#     def get(self,req):
-#         return render(req,"edithomework.html")
+class EdithomeworkView(View):
+    def get(self,req,**kwargs):
+        hid=kwargs.get('hid')
+        qso=HomeWork.objects.get(id=hid)
+        form_data = HomeworkForm(initial={'subject':qso.subject,'question':qso.question,'submit_date':qso.submit_date})
+        return render(req,"edithomework.html",{'data':form_data})
+    # def post
 
 
 
+class DeleteHomewrkView(View):
+    def get(self,req,**kwargs):
+        hid = kwargs.get('hid')
+        HomeWork.objects.get(id=hid).delete()
+        return redirect('viewworks') 

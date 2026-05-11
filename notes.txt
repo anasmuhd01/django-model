@@ -74,3 +74,21 @@ form.as_div
 form.as_p
 form.as_ul => <ul> wrap inside the ul tag
 form.as_table => <table> wrap inside the table tag
+
+Django Model Form:
+------------------
+
+form concept by django which is related to models
+every modelform class will be associated with a specific model defined
+child of modelform class from django->forms.py
+
+eg:-
+
+class HomeWork(models.Model):
+    subject.....
+    question.......
+
+class ModelFormName(models.ModelForm):
+    class Meta:
+        model=HomeWork
+        fields='__all__'

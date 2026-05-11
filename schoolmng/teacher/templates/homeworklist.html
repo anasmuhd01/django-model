@@ -36,8 +36,8 @@
                     <td>{{i.question}}</td>
                     <td>{{i.submit_date}}</td>
                     <td>
-                        <a class="btn btn-warning" href="">edit</a>
-                        <a class="btn btn-danger" href="">delte</a>
+                        <a class="btn btn-warning" href="{% url 'edithw' i.id %}">edit</a>
+                        <a class="btn btn-danger" href="{% url 'delhw' i.id %}">delte</a>
                     </td>
                 </tr>
                 {% endfor %}
