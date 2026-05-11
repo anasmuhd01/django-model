@@ -79,22 +79,31 @@ class AddhomeworkView(View):
         # date = req.POST.get('submit_date')
         form_data = HomeworkForm(data=req.POST)
         if form_data.is_valid():
-            
-            subject = form_data.cleaned_data('subject')
-            question = form_data.cleaned_data('question')
-            date = form_data.cleaned_data('submit_date')
-        
+            subject=form_data.cleaned_data.get('subject')
+            question = form_data.cleaned_data.get('question')
+            date = form_data.cleaned_data.get('submit_date')
             HomeWork.objects.create(subject=subject,question=question,submit_date=date)
             return redirect('viewworks')
-        return  HttpResponse('Form validation failed')
+        return HttpResponse('form validation failed')
     
 class EdithomeworkView(View):
     def get(self,req,**kwargs):
-        hid=kwargs.get('hid')
-        qso=HomeWork.objects.get(id=hid)
-        form_data = HomeworkForm(initial={'subject':qso.subject,'question':qso.question,'submit_date':qso.submit_date})
-        return render(req,"edithomework.html",{'form':form_data})
-    # def post
+        hid = kwargs.get('hid')
+        qso = HomeWork.objects.get(id=hid)
+        form_data=HomeworkForm(initial={'subject':qso.subject,'question':qso.question,'submit_date':qso.submit_date})
+        return render(req,'edithomework.html',{'form':form_data})
+    def post(self,req,**kwargs):
+        hid = kwargs.get('hid')
+        qso = HomeWork.objects.get(id=hid)
+        form_data = HomeworkForm(req.POST)
+        if form_data.is_valid():
+            qso.subject = form_data.cleaned_data.get('subject')
+            qso.question = form_data.cleaned_data.get('question')
+            qso.submit_date = form_data.cleaned_data.get('submit_date')
+            qso.save()
+            return redirect('viewworks')
+
+
 
 
 
