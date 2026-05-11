@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center " style="min-height: 80vh; padding: 5px;">
+        <div class="w-50 border-shadow bg-light p-2">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input class="form-control mb-3" type="text" name="sub" id="" placeholder="Subject">
+                <textarea class="form-control mb-3" name="qst" id="" placeholder="Question"></textarea>
+                <input class="form-control mb-3" type="date" name="dt" id="" placeholder="Date">
+
+                <div class="text-center">
+                    <a href="" class="btn btn-success">Submit</a>
+                    <a href="" class="btn btn-success">Cancel</a>
+                </div>
+
+            </form>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header class="d-flex align-items-center bg-info" style="height: 80px;">
+        <h1>Home work list</h1>
+    </header>
+    <div class="p-4">
+        <a href="{% url 'addhworks' %}" class="btn btn-info mb-3">Add homework +</a>
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Subject</th>
+                    <th>Question</th>
+                    <th>Submit Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td> {{i.subject}}</td>
+                    <td>{{i.question}}</td>
+                    <td>{{i.submit_date}}</td>
+                    <td>
+                        <a class="btn btn-warning" href="">edit</a>
+                        <a class="btn btn-danger" href="">delte</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <footer class="d-flex text-center bg-info fixed-bottom" style="height: 50px">
+        <!-- place footer here -->
+        <h4>Homeworks @ 2026</h4>
+    </footer>
+
+
+</body>
+
+</html>

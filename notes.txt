@@ -70,3 +70,7 @@ DjangoForms =>
 form concept by django
 a child class of form class from django-> forms.py
 
+form.as_div
+form.as_p
+form.as_ul => <ul> wrap inside the ul tag
+form.as_table => <table> wrap inside the table tag

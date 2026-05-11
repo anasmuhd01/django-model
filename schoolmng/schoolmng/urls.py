@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from teacher.views import *
-from Student.views import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +26,8 @@ urlpatterns = [
     path('add',AddStudentView.as_view(),name="sadd"),
     path('edit<int:sid>',EditStudentView.as_view(),name='sedit'),
     path('delete<int:sid>',DeleteStudent.as_view(),name='sdelete'),
+    path('viwworks',HomeworkListView.as_view(),name="viewworks"),
+    path('addhwrk',AddhomeworkView.as_view(),name="addhworks"),
+    # path('edithwork',)
 
-    path('student/listwork',ListWorkView.as_view(),name='studworks')
 ]
