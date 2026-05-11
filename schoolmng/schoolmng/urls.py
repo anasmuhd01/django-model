@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homeView.as_view()),
     path('teacher/',include('teacher.urls')),
+    path('office/',include('office.urls')),
     
 ]

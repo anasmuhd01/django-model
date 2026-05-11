@@ -93,7 +93,7 @@ class EdithomeworkView(View):
         hid=kwargs.get('hid')
         qso=HomeWork.objects.get(id=hid)
         form_data = HomeworkForm(initial={'subject':qso.subject,'question':qso.question,'submit_date':qso.submit_date})
-        return render(req,"edithomework.html",{'data':form_data})
+        return render(req,"edithomework.html",{'form':form_data})
     # def post
 
 
