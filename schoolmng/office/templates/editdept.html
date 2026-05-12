@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block base %}
+<div class="container-fluid d-flex justify-content-center align-items-center " style="min-height: 80vh;">
+    <div class="w-50  border shadow bg-light">
+        <h1 class="text-center my-2">Edit department</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <table class="table table-borderd">
+                {{form.as_table}}
+            </table>
+
+            <button class="btn btn-success m-3"> Submit</button>
+        </form>
+
+    </div>
+</div>
+{% endblock base %}

@@ -22,3 +22,14 @@ class DeptListView(View):
     def get(self,req):
         data = Department.objects.all()
         return render(req,"deptlist.html",{'data':data})
+    
+class DeleteDeptView(View):
+    def get(self,req,**kwargs):
+        id = kwargs.get('id')
+        Department.objects.get(id=id).delete()
+        return redirect("dptlistv")
+
+class EditDeptView(View):
+    def get(self,req):
+        form = DeptForm()
+        return render(req,"editdept.html",{'form':form})
