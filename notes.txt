@@ -92,3 +92,31 @@ class ModelFormName(models.ModelForm):
     class Meta:
         model=HomeWork
         fields='__all__'
+
+Django Template Inheritance =>
+------------------------------
+
+- inheriting Template codes/UI into antoher Template
+
+basetemplate.html =>
+--------------------
+<html>
+<head></head>
+<body>
+<header>.....</header>
+{% block blockname %}
+
+{% endblock blockname %}
+<footer></footer>
+</body>
+</html>
+
+ChildTemplate.html=>
+--------------------
+
+{% extends "basetemplate.html" %}
+{% block blockname %}
+<h1>child</h1>
+{% endblock blockname %}
+
+

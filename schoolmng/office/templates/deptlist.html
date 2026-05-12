@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block base %}
+
+{% if data %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>HOD</th>
+            <th>Department</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in data %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.hod}}</td>
+            <td>{{i.dept_room}}</td>
+            <td>
+                <a href="" class="btn btn-warning me-4 ">Edit</a>
+                <a href="" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+{% endif %}
+
+{% endblock base %}
