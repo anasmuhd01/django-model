@@ -20,7 +20,7 @@
             <td>{{i.hod}}</td>
             <td>{{i.dept_room}}</td>
             <td>
-                <a href="{% url 'editdept' %}" class="btn btn-warning me-4 ">Edit</a>
+                <a href="{% url 'editdept' i.id %}" class="btn btn-warning me-4 ">Edit</a>
                 <a href="{% url 'dltdptview' i.id %}" class="btn btn-danger">Delete</a>
             </td>
         </tr>

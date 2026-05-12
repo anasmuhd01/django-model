@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.views import View
 from office.forms import * 
-
+from django.http import HttpResponse
 # Create your views here.
 
 class OfficeHomeView(View):
@@ -30,6 +30,17 @@ class DeleteDeptView(View):
         return redirect("dptlistv")
 
 class EditDeptView(View):
-    def get(self,req):
-        form = DeptForm()
+    def get(self,req,**kwargs):
+        did = kwargs.get('id')
+        dqso = Department.objects.get(id=did)
+        form = DeptForm(instance=dqso)
         return render(req,"editdept.html",{'form':form})
+    
+    def post(self,req,**kwargs):
+        id = kwargs.get('id')
+        qso = Department.objects.get(id = id)
+        form_data = DeptForm(data=req.POST,instance=qso)
+    
+        if form_data.is_valid():
+            form_data.save()
+            return redirect('dptlistv')
