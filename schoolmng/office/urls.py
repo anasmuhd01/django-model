@@ -12,5 +12,5 @@ urlpatterns=[
     path('addteacher',AddTeacher.as_view(),name="addteachr"),
     path('listteacher',ListTeacher.as_view(),name="listT"),
     path('deleteteacher/<int:id>',DeleteTeacherview.as_view(),name='deleteT'),
-    path('editteacher',,name="editT"),
+    path('editteacher/<int:id>',EditTeacherView.as_view(),name="editT"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

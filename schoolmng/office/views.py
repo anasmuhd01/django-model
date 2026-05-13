@@ -67,7 +67,14 @@ class DeleteTeacherview(View):
         id = kwargs.get('id')
         Teacher.objects.get(id=id).delete()
         return redirect('listT')
-    
+
+
+class EditTeacherView(View):
+    def get(self,req,**kwargs):
+        id = kwargs.get('id')
+        TeacherQso = Teacher.objects.get(id=id)
+        form_data = TeacherForm(instance=TeacherQso)
+        return render(req,"")
 
 
         
