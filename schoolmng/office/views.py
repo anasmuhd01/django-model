@@ -74,7 +74,15 @@ class EditTeacherView(View):
         id = kwargs.get('id')
         TeacherQso = Teacher.objects.get(id=id)
         form_data = TeacherForm(instance=TeacherQso)
-        return render(req,"")
+        return render(req,"editteacher.html",{"form":form_data})
+    
+    def post(self,req,**kwargs):
+        id = kwargs.get('id')
+        Teacherqso = Teacher.objects.get(id = id)
+        form_data = TeacherForm(data=req.POST,files=req.FILES,instance=Teacherqso)
+        if form_data.is_valid():
+            form_data.save()
+            return redirect('listT')
 
 
         

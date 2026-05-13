@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block base %}
+
+<h1>Edit teacher</h1>
+<div class="d-flex justify-content-center align-items-center">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+            {{form.as_table}}
+        </table>
+        <button class="btn btn-info"> Submit</button>
+    </form>
+
+
+</div>
+
+{% endblock base %}
