@@ -50,3 +50,10 @@ class AddTeacher(View):
     def get(self,req):
         form = TeacherForm()
         return render(req,"addteacher.html",{'form':form})
+    
+    def post(self,req):
+        form_data = TeacherForm(data=req.POST,files=req.FILES)
+        if form_data.is_valid():
+            form_data.save()
+            return redirect("officehome")
+    
