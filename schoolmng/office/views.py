@@ -46,3 +46,7 @@ class EditDeptView(View):
             form_data.save()
             return redirect('dptlistv')
 
+class AddTeacher(View):
+    def get(self,req):
+        form = TeacherForm()
+        return render(req,"addteacher.html",{'form':form})
