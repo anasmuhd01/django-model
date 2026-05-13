@@ -120,3 +120,23 @@ ChildTemplate.html=>
 {% endblock blockname %}
 
 
+Django msg Frmework =>
+-----------------------
+
+fw used for providing user notification/alerts in django apps 
+django-> contrib -> messages
+
+message methods 
+    .message.success(req,"message")
+    .message.info(req,"message")
+    .message.error(req,"message")
+    .message.debug(req,"message")
+
+Template message markup code =>
+================================
+
+{% if messages %}
+{% for msg in messages %}
+<div>{{msg}}</div>
+{% endif %}
+{% endif %}

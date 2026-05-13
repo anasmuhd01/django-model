@@ -61,3 +61,14 @@ class ListTeacher(View):
     def get(self,req):
         teacherqso = Teacher.objects.all()
         return render(req,"viewteacher.html",{'teacherdata':teacherqso})
+    
+class DeleteTeacherview(View):
+    def get(self,req,**kwargs):
+        id = kwargs.get('id')
+        Teacher.objects.get(id=id).delete()
+        return redirect('listT')
+    
+
+
+        
+        
