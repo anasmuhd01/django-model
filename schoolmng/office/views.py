@@ -55,5 +55,9 @@ class AddTeacher(View):
         form_data = TeacherForm(data=req.POST,files=req.FILES)
         if form_data.is_valid():
             form_data.save()
-            return redirect("officehome")
+            return redirect("listT")
     
+class ListTeacher(View):
+    def get(self,req):
+        teacherqso = Teacher.objects.all()
+        return render(req,"viewteacher.html",{'teacherdata':teacherqso})

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block base %}
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>age</th>
+            <th>phone</th>
+            <th>place</th>
+            <th>photo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in teacherdata %}
+        <tr>
+            <td> {{i.id}} </td>
+            <td> {{i.name}} </td>
+            <td> {{i.subject}} </td>
+            <td> {{i.age}} </td>
+            <td> {{i.phone}} </td>
+            <td> {{i.place}} </td>
+            <td> <img src="{{i.photo}}" alt=""> </td>
+            <td>
+                <a href="" class="btn btn-warning">Edit</a>
+                <a href="" class="btn btn-danger">Delete</a>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock base %}
