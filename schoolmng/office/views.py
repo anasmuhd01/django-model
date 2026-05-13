@@ -30,6 +30,7 @@ class DeleteDeptView(View):
         return redirect("dptlistv")
 
 class EditDeptView(View):
+
     def get(self,req,**kwargs):
         did = kwargs.get('id')
         dqso = Department.objects.get(id=did)
@@ -44,3 +45,4 @@ class EditDeptView(View):
         if form_data.is_valid():
             form_data.save()
             return redirect('dptlistv')
+
